@@ -2,25 +2,26 @@
 
 This repository hosts the [Buildfarm](https://github.com/bazelbuild/bazel-buildfarm) deployment and administration application.
 
-### Quick Start
+## Quick Start
 
-#### Local Testing
+### Local Testing
 
-Make sure Docker is running
-
-Create log directory
+- First, make sure Docker is running
+- Create the log directory
 
 ```
 sudo mkdir /var/log/bfmgr && sudo chmod 0777 /var/log/bfmgr
 ```
 
-Build and run from source
+#### Build and run from source
+
+_**(NOTE)**: If you are building on macOS Big Sur, follow instructions [here](https://wolfpaulus.com/java-on-macos-big-sur/) to get `java` configured properly._
 
 ```
 ./mvnw clean package && java -jar target/bfmgr-<REL NUMBER>.jar
 ```
 
-Download and run a binary release
+#### Download and run a binary release
 
 ```
 rel=<RELEASE_NUMBER>
@@ -28,9 +29,9 @@ wget https://github.com/80degreeswest/bfmgr/releases/download/$rel/bfmgr-$rel.ja
 java -jar bfmgr-$rel.jar
 ```
 
-Go to http://localhost and click Create
+Once successfully running, navigate to [http://localhost](http://localhost) in your browser and click _Create_.
 
-#### Deploying in AWS
+### Deploying in AWS
 
 Run below CloudFormation template in your AWS account
 
